@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory List</title>
+</head>
+<body>
+    <h2>Inventory List</h2>
+    <a href="/inventory/new">Add New Product</a>
+    <table>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Product Brand</th>
+            <th>Actions</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.Pid }}</td>
+            <td>{{ product.Pname }}</td>
+            <td>{{ product.Pbrand }}</td>
+            <td>
+               
+                <a href="/inventory/update/{{ product.Pid }}">Update</a>
+                <a href="/inventory/delete/{{ product.Pid }}">Delete</a>
+               
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

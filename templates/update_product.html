@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Product</title>
+</head>
+<body>
+    <h2>Update Product</h2>
+    <form action="/inventory/update/{{ product.Pid }}" method="post">
+        <input type="hidden" name="Pid" value="{{ product.Pid }}">
+        <div>
+            <label for="Pname">Product Name:</label>
+            <input type="text" id="Pname" name="Pname" value="{{ product.Pname }}" required>
+        </div>
+        <div>
+            <label for="Pbrand">Product Brand:</label>
+            <input type="text" id="Pbrand" name="Pbrand" value="{{ product.Pbrand }}" required>
+        </div>
+        <div>
+            <button type="submit">Update Product</button>
+        </div>
+    </form>
+</body>
+</html>
